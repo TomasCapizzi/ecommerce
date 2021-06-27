@@ -6,7 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListcontainer'
 function App() {
   return (
     <div className="App">
-      <Navbar nombreTienda='Ecommerce'/>
+      <Navbar nombreTienda='Craft-Beer'/>
       <ItemListContainer greetings="¡Bienvenido a nuestra Tienda Online!"/>  
     </div>
   );
