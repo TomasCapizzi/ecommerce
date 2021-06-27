@@ -1,17 +1,21 @@
 import React from 'react';
 import '../../App.css';
+import Carrito from '../carrito/carrito';
 
-function Navbar(){
+function Navbar(props){
+    console.log(props)
     return (
-        <div className="navbar">
-            <h1>Ecommerce</h1>
+        <nav className="navbar">
+            <h1>{props.nombreTienda}</h1>
             <ul>
-                <li>Home</li>
-                <li>Products</li>
-                <li>Contact</li>
+                <li>Inicio</li>
+                <li>|</li>
+                <li>Productos</li>
+                <li>|</li>
+                <li>Contacto</li>
             </ul>
-            <button><i class="fas fa-shopping-cart"></i></button>
-        </div>
+            <Carrito/> 
+        </nav>
     );
 }
 export default Navbar;
