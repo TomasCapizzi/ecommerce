@@ -1,12 +1,13 @@
 import React from 'react';
-import '../../App.css';
-import Carrito from '../carrito/carrito';
+import './Navbar.css';
+import Carrito from '../Carrito/Carrito';
+import {IoBeerOutline} from 'react-icons/io5';
 
 function Navbar(props){
     console.log(props)
     return (
         <nav className="navbar">
-            <h1>{props.nombreTienda} <i class="fas fa-beer"></i></h1>
+            <h1>{props.nombreTienda} <IoBeerOutline /></h1>
         <div>
             <ul>
                 <li>Inicio</li>

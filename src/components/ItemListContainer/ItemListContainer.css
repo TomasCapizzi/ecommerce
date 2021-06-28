@@ -1,0 +1,9 @@
+.contenedor-items{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    background-color: #335c67;
+    justify-content: center;
+    color: #fff3b0;
+}
