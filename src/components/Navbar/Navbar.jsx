@@ -1,5 +1,4 @@
 import React from 'react';
-import './Navbar.css';
 import Carrito from '../Carrito/Carrito';
 import {IoBeerOutline} from 'react-icons/io5';
 

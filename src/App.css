@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800&display=swap');
 
-*{
-    box-sizing: border-box;
-}
 
 /* https://coolors.co/335c67-fff3b0-e09f3e-9e2a2b-540b0e */
-body{
-    margin: 0;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    width: 100%;
-}
-.App{
-    width: 100%;
-    margin: 0;
-}
+
