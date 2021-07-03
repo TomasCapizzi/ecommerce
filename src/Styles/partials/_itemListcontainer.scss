@@ -6,4 +6,15 @@
     background-color: #335c67;
     justify-content: center;
     color: #fff3b0;
+    justify-content: center;
+    text-align: center;
+}
+.contenedor-items h2{
+    width: 100%;
+}
+
+.item-counter{
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
 }

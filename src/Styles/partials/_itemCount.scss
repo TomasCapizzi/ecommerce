@@ -1,0 +1,60 @@
+.item-counter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 8%;
+    align-items: center;
+}
+.item-counter div{
+    width: 100%;
+}
+.btn-SumaResta{
+    display: flex;
+    justify-content: center;
+}
+.btn-SumaResta p{
+    font-size: 1.7rem;
+    margin: 0 10px 10px;
+}
+
+.btn-SumaResta button{
+    background-color: transparent;
+    border: none;    
+    margin: 0;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: #fff3b0;
+    cursor: pointer;
+}
+
+.item-counter button:hover{
+    color: #9e2a2b;
+}
+.btn-agregarItems{
+    background-color: #fff3b0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.btn-agregarItems button{
+    color: #335c67;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-items: center;
+}
+.mensaje-seleccion-items p{
+    font-size: 0.8rem;
+}
+
+.off{
+    color: #ccc;
+    pointer-events: none;
+    cursor: default;
+}
+
+.hide{
+    display: none;
+}
