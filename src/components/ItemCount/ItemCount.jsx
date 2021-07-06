@@ -3,23 +3,23 @@ import {BsPlusCircleFill} from 'react-icons/bs';
 import {FaMinusCircle} from 'react-icons/fa';
 
 
-function ItemCount({stockMinimo, stockMaximo}){
+function ItemCount({stock, titulo, estilo}){
 
     const [contador, setContador] = useState(1);
     const sumarContador =()=>{
-        if(contador < stockMaximo && stockMaximo != 0){
+        if(contador < stock && stock>=1){
             setContador(contador+1);
         } 
     }
     const restarContador =()=>{
-        if(contador> stockMinimo){
-            setContador(contador-1);
-            
+        if(contador< stock && contador>1){
+            setContador(contador-1);            
         }
     }
 
     const agregarItems = ()=>{ 
-        alert(`Has seleccionado ${contador} cervezas`);
+        alert(`Has seleccionado ${contador} ${titulo} ${estilo}`);
+        setContador(1);
     }
     return(
         <div className='item-counter'>

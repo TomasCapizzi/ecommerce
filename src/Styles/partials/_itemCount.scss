@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 .item-counter{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 8%;
+    width: 100%;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
 }
 .item-counter div{
     width: 100%;
@@ -15,6 +17,9 @@
 .btn-SumaResta p{
     font-size: 1.7rem;
     margin: 0 10px 10px;
+    color: #335c67;
+    font-weight: 600; 
+    font-family: 'Poppins', sans-serif;   
 }
 
 .btn-SumaResta button{
@@ -23,7 +28,7 @@
     margin: 0;
     border-radius: 50%;
     font-size: 1.4rem;
-    color: #fff3b0;
+    color: #e09f3e;
     cursor: pointer;
 }
 
@@ -31,9 +36,9 @@
     color: #9e2a2b;
 }
 .btn-agregarItems{
-    background-color: #fff3b0;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    background-color: #e09f3e;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 .btn-agregarItems button{
     color: #335c67;
@@ -45,8 +50,9 @@
     cursor: pointer;
     align-items: center;
 }
-.mensaje-seleccion-items p{
-    font-size: 0.8rem;
+
+.btn-agregarItems:hover{
+    background-color: #fff3b0;
 }
 
 .off{
