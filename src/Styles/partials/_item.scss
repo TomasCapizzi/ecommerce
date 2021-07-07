@@ -5,8 +5,30 @@
     background-color: #fff;
     color: #335c67;
     font-weight: 700;
-    margin: 15px 10px;
+    margin: 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
 }
 .item img{
     width:80%;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.item h3{
+    width: 100%;
+    margin: 0;
+}
+.item h5{
+    width: 100%;
+    margin:0;
+    color: #9e2a2b;
+}
+
+.item:hover{
+    .item-title{
+        letter-spacing: 1.5px;
+    }
 }

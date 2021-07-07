@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import Item from './Item/Item'
 
 function ItemList(){
-    
+    const [itemListState, setItemListState] = useState([]);
     const itemList = [
         {
             id:1,
@@ -62,13 +62,20 @@ function ItemList(){
             stock:3
         }
     ];
-
+    
+    const obtenerLista = ()=> {
+        return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(itemList)
+        }, 1500)
+    })
+}
+    obtenerLista().then((item)=>setItemListState(item))
     return(
         <div className='item-list'>
-            {itemList.map(
+            {itemListState.map(
                     item => (<Item item={item} key={item.id}/>)
-                )}
-           
+                )}           
         </div>
     )
 }
