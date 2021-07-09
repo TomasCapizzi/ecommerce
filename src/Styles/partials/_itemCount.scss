@@ -22,7 +22,7 @@
     font-family: 'Poppins', sans-serif;   
 }
 
-.btn-SumaResta button{
+.botones-contador{
     background-color: transparent;
     border: none;    
     margin: 0;
@@ -32,6 +32,20 @@
     cursor: pointer;
 }
 
+.botones-contador:disabled{
+    color: #ccc;
+    pointer-events: none;
+    cursor:none;
+}
+.botones-contador:enabled{
+    background-color: transparent;
+    border: none;    
+    margin: 0;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: #e09f3e;
+    cursor: pointer;
+}
 .item-counter button:hover{
     color: #9e2a2b;
 }
@@ -47,20 +61,11 @@
     background-color: transparent;
     font-size: 1.2rem;
     font-weight: 600;
-    cursor: pointer;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn-agregarItems:hover{
     background-color: #fff3b0;
 }
 
-.off{
-    color: #ccc;
-    pointer-events: none;
-    cursor: default;
-}
-
-.hide{
-    display: none;
-}

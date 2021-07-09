@@ -6,13 +6,20 @@ import {FaMinusCircle} from 'react-icons/fa';
 function ItemCount({stock, titulo, estilo}){
 
     const [contador, setContador] = useState(1);
+
+    let stockMinimo = true;
+    let stockMaximo = false;
+
+    contador>1? stockMinimo=false : stockMinimo=true;
+    contador == stock ? stockMaximo = true : stockMaximo=false;
+    
     const sumarContador =()=>{
         if(contador < stock && stock>=1){
             setContador(contador+1);
         } 
     }
     const restarContador =()=>{
-        if(contador< stock && contador>1){
+        if(contador<= stock && contador>1){
             setContador(contador-1);            
         }
     }
@@ -24,9 +31,9 @@ function ItemCount({stock, titulo, estilo}){
     return(
         <div className='item-counter'>
             <div className='btn-SumaResta'>
-                <button id='btn-Menos' onClick={restarContador}><FaMinusCircle/></button>
+                <button className='botones-contador' disabled={stockMinimo} onClick={restarContador}><FaMinusCircle /></button>
                     <p>{contador}</p>
-                <button id='btn-Mas' onClick={sumarContador}><BsPlusCircleFill /></button>
+                <button  className='botones-contador' disabled={stockMaximo} onClick={sumarContador}><BsPlusCircleFill /></button>
             </div>
             <div className='btn-agregarItems'>
                 <button onClick={agregarItems}>Agregar +</button>

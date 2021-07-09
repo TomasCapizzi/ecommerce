@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Item from './Item/Item'
 
 function ItemList(){
@@ -70,14 +70,18 @@ function ItemList(){
         }, 1500)
     })
 }
+
+useEffect(()=>{
     obtenerLista().then((item)=>setItemListState(item))
-    return(
-        <div className='item-list'>
-            {itemListState.map(
-                    item => (<Item item={item} key={item.id}/>)
-                )}           
-        </div>
-    )
+},[]);
+
+return(
+    <div className='item-list'>
+        {itemListState.map(
+                item => (<Item item={item} key={item.id}/>)
+        )}           
+    </div>
+);
 }
 
 export default ItemList;
