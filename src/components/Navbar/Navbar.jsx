@@ -1,6 +1,7 @@
 import React from 'react';
 import Carrito from '../Carrito/Carrito';
 import {IoBeerOutline} from 'react-icons/io5';
+import Links from './Links/Links';
 
 function Navbar(props){
     console.log(props)
@@ -8,13 +9,7 @@ function Navbar(props){
         <nav className="navbar">
             <h1>{props.nombreTienda} <IoBeerOutline /></h1>
         <div>
-            <ul>
-                <li>Inicio</li>
-                <li>|</li>
-                <li>Productos</li>
-                <li>|</li>
-                <li>Contacto</li>
-            </ul>
+            <Links />
             <Carrito/> 
         </div>
         </nav>

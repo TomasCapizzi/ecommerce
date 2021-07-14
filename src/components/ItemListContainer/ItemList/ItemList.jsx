@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Item from './Item/Item'
+import Item from './Item/Item';
 
 function ItemList(){
     const [itemListState, setItemListState] = useState([]);
@@ -59,7 +59,7 @@ function ItemList(){
             img: 'https://mefisto.com.ar/pub/media/catalog/product/cache/6dd18fb85a59916e944c7f1f42e58a4c/i/p/ipa-01.png',
             categoria: 6,
             precio: 260,
-            stock:3
+            stock:5
         }
     ];
     
@@ -78,7 +78,10 @@ useEffect(()=>{
 return(
     <div className='item-list'>
         {itemListState.map(
-                item => (<Item item={item} key={item.id}/>)
+                item =>  (
+                <Item item={item} key={item.id}/>
+                )
+                   
         )}           
     </div>
 );

@@ -11,7 +11,7 @@ function ItemCount({stock, titulo, estilo}){
     let stockMaximo = false;
 
     contador>1? stockMinimo=false : stockMinimo=true;
-    contador == stock ? stockMaximo = true : stockMaximo=false;
+    contador === stock ? stockMaximo = true : stockMaximo=false;
     
     const sumarContador =()=>{
         if(contador < stock && stock>=1){
