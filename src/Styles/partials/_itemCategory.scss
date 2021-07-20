@@ -1,0 +1,21 @@
+.contenedor-items-categoria{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    background-color: #335c67;
+    justify-content: center;
+    color: #fff3b0;
+    justify-content: center;
+    text-align: center;
+}
+
+.category-list{
+    width: 70%;
+    height: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px;
+}

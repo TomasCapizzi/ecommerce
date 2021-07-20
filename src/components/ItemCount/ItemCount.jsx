@@ -3,15 +3,18 @@ import {BsPlusCircleFill} from 'react-icons/bs';
 import {FaMinusCircle} from 'react-icons/fa';
 
 
-function ItemCount({stock, titulo, estilo}){
-
-    const [contador, setContador] = useState(1);
-
+function ItemCount({contador,setContador,stock,disableBtn,setDisableBtn}){
+    
     let stockMinimo = true;
     let stockMaximo = false;
+    console.log(disableBtn);
 
     contador>1? stockMinimo=false : stockMinimo=true;
     contador === stock ? stockMaximo = true : stockMaximo=false;
+    if(stock === 0){
+        setDisableBtn(true);
+        stockMaximo = true;
+    }
     
     const sumarContador =()=>{
         if(contador < stock && stock>=1){
@@ -24,10 +27,6 @@ function ItemCount({stock, titulo, estilo}){
         }
     }
 
-    const agregarItems = ()=>{ 
-        alert(`Has seleccionado ${contador} ${titulo} ${estilo}`);
-        setContador(1);
-    }
     return(
         <div className='item-counter'>
             <div className='btn-SumaResta'>
@@ -35,9 +34,7 @@ function ItemCount({stock, titulo, estilo}){
                     <p>{contador}</p>
                 <button  className='botones-contador' disabled={stockMaximo} onClick={sumarContador}><BsPlusCircleFill /></button>
             </div>
-            <div className='btn-agregarItems'>
-                <button onClick={agregarItems}>Agregar +</button>
-            </div>
+            
         </div>
     );
 }

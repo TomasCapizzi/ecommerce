@@ -32,3 +32,43 @@
         letter-spacing: 1.5px;
     }
 }
+
+
+#btnAgregar:disabled{
+    display: none;
+}
+
+#btnAgregar:enabled{
+    color: #335c67;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+#noStock:disabled{
+    display: none;
+}
+#noStock:enabled{
+    color: #9e2a2b;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-items: center;
+}
+.btn-agregarItems{
+    width: 100%;
+    background-color: #e09f3e;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.btn-agregarItems:hover{
+    background-color: #fff3b0;
+}

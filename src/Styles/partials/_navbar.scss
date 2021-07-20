@@ -1,3 +1,8 @@
+.nav-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
 .navbar{
     background-color: #9e2a2b;
     color: #fff3b0;
@@ -6,6 +11,23 @@
     padding:0 8px;
     justify-content:space-between;
     text-align: center;
+}
+.navbar-logo-item{
+    display: flex;
+}
+.navbar-logo-item div{
+    margin-left: 15px;
+    background-color: #e09f3e;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+.navbar-logo-item input{
+    border: none;
+    background-color: transparent;
+}
+.navbar-btn-search{
+    cursor: pointer;
 }
 .navbar div{
     display: flex;

@@ -28,15 +28,15 @@ export const productosList = [
         titulo: 'Prinston',
         sub: 'American Amber Ale',
         img: 'https://mefisto.com.ar/pub/media/catalog/product/cache/6dd18fb85a59916e944c7f1f42e58a4c/c/6/c6ec3462-c61c-438d-91db-15cb6ce23f93_1.jpeg',
-        categoria: 4,
+        categoria: 1,
         precio: 180,
-        stock:4
+        stock:0
     }, {
         id:5,
         titulo: 'Laurus',
         sub: 'IPA',
         img: 'https://mefisto.com.ar/pub/media/catalog/product/cache/6dd18fb85a59916e944c7f1f42e58a4c/l/a/laurus_micro_ipa.png',
-        categoria: 5,
+        categoria: 2,
         precio: 300,
         stock:11
     }, {
@@ -44,7 +44,7 @@ export const productosList = [
         titulo: 'Santina',
         sub: 'Oktoberfest',
         img: 'https://mefisto.com.ar/pub/media/catalog/product/cache/6dd18fb85a59916e944c7f1f42e58a4c/f/e/festb.png',
-        categoria: 6,
+        categoria: 1,
         precio: 230,
         stock:3
     }, {
@@ -52,8 +52,16 @@ export const productosList = [
         titulo: 'La Paloma',
         sub: 'American IPA',
         img: 'https://mefisto.com.ar/pub/media/catalog/product/cache/6dd18fb85a59916e944c7f1f42e58a4c/i/p/ipa-01.png',
-        categoria: 6,
+        categoria: 2,
         precio: 260,
         stock:5
+    },{
+        id:8,
+        titulo: 'Jabalina',
+        sub: 'Doble IPA',
+        img: 'https://mefisto.com.ar/pub/media/catalog/product/cache/6dd18fb85a59916e944c7f1f42e58a4c/j/a/jabalina_fake_news_dipa.png',
+        categoria: 2,
+        precio: 330,
+        stock:9
     }
 ];

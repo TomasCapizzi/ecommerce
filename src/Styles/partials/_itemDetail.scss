@@ -54,18 +54,18 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-}
-.item-detail-title h3{
-    font-size: 2rem;
-}
-.item-detail-title h5{
-    font-size: 1.6rem;
-    color: #9E2A2B;
+    h3{
+        font-size: 2rem;
+    }
+    h5{
+        font-size: 1.6rem;
+        color: #9E2A2B;
+    }
+    p{
+        font-size: 1.8rem;
+    }
 }
 
-.item-detail-title p{
-    font-size: 1.8rem;
-}
 
 .item-detail-count{
     width: 100%;
@@ -74,4 +74,90 @@
 
 .item-detail h3{
     font-size: 2rem;
+}
+
+.btn-fin-compra{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a, div{
+    width: 100%;
+    }
+
+    button{
+    padding: 10px;
+    margin: 8px;
+    width: 40%;
+    background-color: #E09F3E;
+    color: #335c67;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    }
+}
+
+.btn-fin-compra div button{
+    background-color: #335c67;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+.btn-fin-compra a button{
+    width: 50%;
+}
+
+.container-counter-btn{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#counter-btnAdd {
+    width: 100%;
+}
+.btn-agregarItems-detail{
+    width: 100%;
+    background-color: #e09f3e;
+    border-bottom-right-radius: 8px;
+    button{
+    width: 100%;
+    }
+}
+.btn-agregarItems-detail:hover{
+    background-color: #fff3b0;
+}
+
+#btnAgregar:disabled{
+    display: none;
+}
+
+#btnAgregar:enabled{
+    color: #335c67;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-items: center;
+    cursor: pointer;
+}
+#noStock:disabled{
+    display: none;
+}
+#noStock:enabled{
+    color: #9e2a2b;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-items: center;
+}
+
+.off{
+    display: none;
 }

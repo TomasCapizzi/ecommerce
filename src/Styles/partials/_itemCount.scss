@@ -46,6 +46,8 @@
     color: #e09f3e;
     cursor: pointer;
 }
+
+
 .item-counter button:hover{
     color: #9e2a2b;
 }
@@ -53,16 +55,6 @@
     background-color: #e09f3e;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-}
-.btn-agregarItems button{
-    color: #335c67;
-    padding: 5px;
-    border: none;
-    background-color: transparent;
-    font-size: 1.2rem;
-    font-weight: 600;
-    align-items: center;
-    cursor: pointer;
 }
 
 .btn-agregarItems:hover{
