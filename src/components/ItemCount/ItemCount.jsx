@@ -7,7 +7,7 @@ function ItemCount({contador,setContador,stock,disableBtn,setDisableBtn}){
     
     let stockMinimo = true;
     let stockMaximo = false;
-    console.log(disableBtn);
+  
 
     contador>1? stockMinimo=false : stockMinimo=true;
     contador === stock ? stockMaximo = true : stockMaximo=false;

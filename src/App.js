@@ -8,14 +8,15 @@ import Contacto from './components/Contacto/Contacto';
 import Productos from './components/Productos/Productos';
 import CategoryNav from './components/Navbar/CategoryNav/CategoryNav';
 import ItemCategory from './components/ItemListContainer/ItemList/ItemCategory/ItemCategory';
-import CartContextProvider, { CartContext } from './Store/CartContext';
+import { CartContextProvider } from './Store/CartContext';
 import Cart from './components/Cart/Cart'
 
 
 
 function App() {
+  const user = 'Tomas';
   return (
-   // <CartContext.Provider>
+   <CartContextProvider>
     <BrowserRouter>
 
      <div className="App">
@@ -46,7 +47,7 @@ function App() {
       </div>
 
     </BrowserRouter>
-    //</CartContext.Provider>
+  </CartContextProvider>
   );
 }
 

@@ -1,42 +1,70 @@
-import React,{useState} from 'react';
+import React,{useContext,useState} from 'react';
 import ItemCount from "../../ItemCount/ItemCount";
 import {IoBeerOutline} from 'react-icons/io5';
 import {CartContext} from '../../../Store/CartContext';
 import{Link} from 'react-router-dom';
 
-
-function ItemDetail({item}){
+const ItemDetail = ({item}) => {
    const [contador, setContador] = useState(1);
 
    const [disableBtn, setDisableBtn] = useState(false);
 
    const [finCompra, setFinCompra] = useState(false);
-
-  // const counterBtnAdd = document.getElementById('counter-btnAdd');
-  // const btnFin = document.getElementById('btn-fin-compra-container');
    
+   const {onAdd,cart, removeItem, checkItem} = useContext(CartContext);   
+
+
+   const {id, sub, titulo, precio, img} = item;
+   const detalleProducto = {
+     id: id,
+     estilo: sub,
+     marca: titulo,
+     precio: precio,
+     img: img,
+     cantidad: contador
+   }
+
    const agregarItems = ()=>{ 
-    alert(`Has seleccionado ${contador} ${item.sub} de ${item.titulo}`);
-    //setContador(1);
-   setFinCompra(true);
+    if(verificarItem(detalleProducto)){
+      alert(`Este producto ya se encuentra en el carrito`);
+      setFinCompra(true);
+    } else{
+      alert(`Has seleccionado ${contador} ${sub} de ${titulo}`);
+    
+      onAdd({detalleProducto})
+      //setContador(1);
+     setFinCompra(true);
+    }
+    
   }
 
   const modificarItems = ()=> {
     setFinCompra(false);
-    console.log(finCompra);
+    removeItem(detalleProducto)
   }
-/*
-if(finCompra){
-    counterBtnAdd.classList.add('off');
-    btnFin.classList.remove('off');
-}
-*/
+
+  const verificarItem = (detalleProducto)=> {
+    console.log('ID',detalleProducto.id)
+    let coincidencia = cart.find( item => item.id === detalleProducto.id)
+    console.log(coincidencia)
+    if(coincidencia != undefined){
+      //checkItem(true);
+      console.log('Hay coincidencia')
+      return true;
+    } else{
+      return false;
+    }
+    
+
+
+  }
+
 
     return(
         <div className='item-detail'>
             <div className='item-detail-img-container'>
               <img src={item.img} alt="" />
-            </div>
+            </div> 
             <div className='item-detail-description'>                
                 <div className='item-detail-title'>
                   <h3>{item.titulo}</h3>
@@ -74,5 +102,4 @@ if(finCompra){
         </div>
     )
 }
-
 export default ItemDetail;
