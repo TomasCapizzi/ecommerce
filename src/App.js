@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import './Styles/main.scss';
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from './components/ItemListContainer/ItemListcontainer';
@@ -9,12 +9,26 @@ import Productos from './components/Productos/Productos';
 import CategoryNav from './components/Navbar/CategoryNav/CategoryNav';
 import ItemCategory from './components/ItemListContainer/ItemList/ItemCategory/ItemCategory';
 import { CartContextProvider } from './Store/CartContext';
-import Cart from './components/Cart/Cart'
+import Cart from './components/Cart/Cart';
+import {database} from './Firebase/productos';
 
 
 
 function App() {
-  const user = 'Tomas';
+
+  const [productos, setProductos] = useState([]);
+
+  async function obtenerProductos(){
+    const listaProductos = await database.collection('productos');
+    const listado = await listaProductos.get();
+    setProductos(listado.docs.map((doc) => {return {...doc.data()}}));
+}
+
+useEffect(()=>{
+  obtenerProductos();
+}, []);
+
+
   return (
    <CartContextProvider>
     <BrowserRouter>
@@ -32,7 +46,7 @@ function App() {
            <ItemDetailList />
          </Route>
          <Route path='/categoria/:id'>
-            <ItemCategory/>
+            <ItemCategory productos={productos}/>
          </Route>
          <Route path='/contacto'>
            <Contacto/>

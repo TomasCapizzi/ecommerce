@@ -1,32 +1,40 @@
 import React, {useState, useEffect} from "react";
 import Item from './Item/Item';
-import {productosList} from '../../../productosList';
+import Spinner from "../../Spinner/Spinner";
+import {database} from '../../../Firebase/productos.js'
 
 function ItemList(){
     const [itemListState, setItemListState] = useState([]);
-    const itemList = productosList;
-    
-    const obtenerLista = ()=> {
-        return new Promise((res,rej)=>{
-        setTimeout(()=>{
-            res(itemList)
-        }, 1500)
-    })
-}
+    const [load, setLoad] = useState(false);
 
-useEffect(()=>{
-    obtenerLista().then((item)=>setItemListState(item))
-},[]);
+    const obtenerLista = ()=> {
+        const listaProductos = database.collection('productos');
+        listaProductos.get().then((query) => setItemListState(query.docs.map((doc) => {
+            setLoad(true);
+            return {...doc.data()}         
+        })))       
+    }
+
+
+    useEffect(()=>{
+    obtenerLista();
+    console.log(itemListState);
+    },[]);
+
+ 
 
 return(
+ 
     <div className='item-list'>
-        {itemListState.map(
+        {load ? itemListState.map(
                 item =>  (
                 <Item item={item} key={item.id}/>
                 )
-          )}           
+          ):  <Spinner/> }           
     </div>
-);
+ 
+)
 }
+
 
 export default ItemList;

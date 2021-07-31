@@ -10,11 +10,11 @@ function Item({item}){
 
     const {onAdd,cart, removeItem, checkItem} = useContext(CartContext); 
 
-    const {id, sub, titulo, precio, img} = item;
+    const {id, estilo, marca, precio, img} = item;
     const detalleProducto = {
      id: id,
-     estilo: sub,
-     marca: titulo,
+     estilo: estilo,
+     marca: marca,
      precio: precio,
      img: img,
      cantidad: contador
@@ -25,7 +25,7 @@ function Item({item}){
           alert(`Este producto ya se encuentra en el carrito`);
           setFinCompra(true);
         } else{
-          alert(`Has seleccionado ${contador} ${sub} de ${titulo}`);
+          alert(`Has seleccionado ${contador} ${estilo} de ${marca}`);
         
           onAdd({detalleProducto})
           //setContador(1);

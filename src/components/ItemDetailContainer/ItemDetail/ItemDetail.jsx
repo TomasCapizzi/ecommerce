@@ -1,24 +1,22 @@
-import React,{useContext,useState} from 'react';
+import React,{useContext,useState, useEffect} from 'react';
 import ItemCount from "../../ItemCount/ItemCount";
 import {IoBeerOutline} from 'react-icons/io5';
 import {CartContext} from '../../../Store/CartContext';
 import{Link} from 'react-router-dom';
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item, indice}) => {
+  item.sort((a,b)=> {return a.id-b.id});
+  
    const [contador, setContador] = useState(1);
-
    const [disableBtn, setDisableBtn] = useState(false);
+   const [finCompra, setFinCompra] = useState(false);   
+   const {onAdd,cart, removeItem, checkItem} = useContext(CartContext);
 
-   const [finCompra, setFinCompra] = useState(false);
-   
-   const {onAdd,cart, removeItem, checkItem} = useContext(CartContext);   
-
-
-   const {id, sub, titulo, precio, img} = item;
+   const {id, marca, estilo, precio, img} = item[indice];
    const detalleProducto = {
      id: id,
-     estilo: sub,
-     marca: titulo,
+     estilo: estilo,
+     marca: marca,
      precio: precio,
      img: img,
      cantidad: contador
@@ -29,7 +27,7 @@ const ItemDetail = ({item}) => {
       alert(`Este producto ya se encuentra en el carrito`);
       setFinCompra(true);
     } else{
-      alert(`Has seleccionado ${contador} ${sub} de ${titulo}`);
+      alert(`Has seleccionado ${contador} ${estilo} de ${marca}`);
     
       onAdd({detalleProducto})
       //setContador(1);
@@ -54,29 +52,26 @@ const ItemDetail = ({item}) => {
     } else{
       return false;
     }
-    
-
-
   }
 
 
     return(
         <div className='item-detail'>
             <div className='item-detail-img-container'>
-              <img src={item.img} alt="" />
+              <img src={item[indice].img} alt="" />
             </div> 
             <div className='item-detail-description'>                
                 <div className='item-detail-title'>
-                  <h3>{item.titulo}</h3>
+                  <h3>{item[indice].marca}</h3>
                   <p>~</p>
-                  <h5>{item.sub}</h5>
+                  <h5>{item[indice].estilo}</h5>
                   <p><IoBeerOutline/></p>
                 </div>
-                  <h3>${item.precio}</h3>  
+                  <h3>${item[indice].precio}</h3>  
                 { !finCompra ? (
                 <div id='counter-btnAdd' className='container-counter-btn'>
                   <div className='item-detail-count'>
-                    <ItemCount contador={contador} setContador={setContador} stock={item.stock} disableBtn={disableBtn} setDisableBtn={setDisableBtn} />
+                    <ItemCount contador={contador} setContador={setContador} stock={item[indice].stock} disableBtn={disableBtn} setDisableBtn={setDisableBtn} />
                   </div> 
                   <div className='btn-agregarItems-detail'>
                    <button id='btnAgregar' disabled={disableBtn} onClick={agregarItems}>Agregar +</button>
