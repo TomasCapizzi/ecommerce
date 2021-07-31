@@ -7,7 +7,6 @@ function Item({item}){
     const [contador, setContador] = useState(1);
     const [disableBtn, setDisableBtn] = useState(false);
     const [finCompra, setFinCompra] = useState(false);
-
     const {onAdd,cart, removeItem, checkItem} = useContext(CartContext); 
 
     const {id, estilo, marca, precio, img} = item;
@@ -52,18 +51,32 @@ function Item({item}){
         }
     }
 
-
     return(
         <div className='item'>
             <Link to={'/productos/' + item.id}><a><img src={item.img} alt="item-imagen" /></a></Link>
             <h3 className='item-title'>{item.titulo}</h3>
             <h5>{item.sub}</h5>
             <h3>${item.precio}</h3>
-            <ItemCount contador={contador} setContador={setContador} stock={item.stock} disableBtn={disableBtn} setDisableBtn={setDisableBtn}/>
-            <div className='btn-agregarItems'>
-                  <button id='btnAgregar' disabled={disableBtn} onClick={agregarItems}>Agregar +</button>
-                  <button id='noStock' disabled={!disableBtn}>Sin Stock</button>
-            </div> 
+            { !finCompra ? (
+                <div id='counter-btnAdd' className='container-counter-btn'>
+                  <div className='item-detail-count'>
+                    <ItemCount contador={contador} setContador={setContador} stock={item.stock} disableBtn={disableBtn} setDisableBtn={setDisableBtn} />
+                  </div> 
+                  <div className='btn-agregarItems-detail'>
+                   <button id='btnAgregar' disabled={disableBtn} onClick={agregarItems}>Agregar +</button>
+                    <button id='noStock' disabled={!disableBtn}>Sin Stock</button>
+                  </div> 
+                 </div> 
+                ) : (
+                <div className='btn-fin-compra-item' id='btn-fin-compra-container'>
+                  <div>
+                  <button onClick={modificarItems}>Modificar</button>
+                   <Link to='/cart'><button id='btn-fin'>Finalizar Compra</button></Link>
+                  </div>
+                  
+                </div>
+                )
+                } 
         </div>
     )
 }

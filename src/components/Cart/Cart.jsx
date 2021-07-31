@@ -13,6 +13,11 @@ export default function Cart(){
         totalCosto = Costo[i] + totalCosto
     }
     console.log(totalCosto)
+// Reduce
+    const CostoTotal = cart.reduce((acc,{cantidad,precio}) => {
+        return acc = acc + (precio*cantidad);
+    },0);
+
     return (
         <div className='cart-container'>
             {
@@ -22,7 +27,7 @@ export default function Cart(){
                     <div className='cart-item-container'>
                         {cart.map(item => <CartItem item={item} key={item.id}/> )}                        
                     </div>
-                    <h3 className='cart-total'>Total: {totalCosto} </h3>
+                    <h3 className='cart-total'>Total: ${CostoTotal} </h3>
                     <button>Pagar</button>
                 </div> : 
                 <div className='cart-vacio'>
@@ -32,7 +37,5 @@ export default function Cart(){
                 
             }
         </div>
-
-
     )
 }

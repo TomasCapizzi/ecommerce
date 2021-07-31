@@ -72,3 +72,47 @@
 .btn-agregarItems:hover{
     background-color: #fff3b0;
 }
+
+.btn-fin-compra-item{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+
+    div{
+        width: 100%;
+    }
+    div button{
+        background-color: #e09f3e;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        color: #335c67;
+    }
+    #btn-fin{
+        width: 99%;
+        border: none;
+        cursor: pointer;
+        background-color: #fff3b0;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        color: #335c67;
+        margin: 0;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    #btn-fin:hover{
+        background-color: #9e2a2b;
+        color: #fff3b0;
+    }
+
+    button:hover{
+        background-color: #dfaa5a;
+    }
+}
+
+

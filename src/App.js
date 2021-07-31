@@ -11,6 +11,7 @@ import ItemCategory from './components/ItemListContainer/ItemList/ItemCategory/I
 import { CartContextProvider } from './Store/CartContext';
 import Cart from './components/Cart/Cart';
 import {database} from './Firebase/productos';
+import Footer from './components/Footer/Footer'
 
 
 
@@ -41,6 +42,7 @@ useEffect(()=>{
        <Switch>
          <Route exact path='/'>
           <ItemListContainer greetings="¡Bienvenido a nuestra Tienda Online!"/>
+          <Footer/>
          </Route>
          <Route path='/productos/:id'>
            <ItemDetailList />
