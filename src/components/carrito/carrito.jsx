@@ -3,7 +3,7 @@ import {AiOutlineShoppingCart} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
 import {CartContext} from '../../Store/CartContext';
 
-function Carrito(){
+export default function Carrito(){
     const {cart} = useContext(CartContext);
     return(
         <div className='carrito-container'>
@@ -14,5 +14,3 @@ function Carrito(){
         </div>
     )
 }
-
-export default Carrito;
