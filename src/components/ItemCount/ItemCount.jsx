@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {BsPlusCircleFill} from 'react-icons/bs';
 import {FaMinusCircle} from 'react-icons/fa';
 

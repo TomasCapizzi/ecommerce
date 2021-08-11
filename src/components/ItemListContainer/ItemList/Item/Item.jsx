@@ -7,7 +7,7 @@ function Item({item}){
     const [contador, setContador] = useState(1);
     const [disableBtn, setDisableBtn] = useState(false);
     const [finCompra, setFinCompra] = useState(false);
-    const {onAdd,cart, removeItem, checkItem} = useContext(CartContext); 
+    const {onAdd,cart, removeItem} = useContext(CartContext); 
 
     const {id, estilo, marca, precio, img} = item;
     const detalleProducto = {
@@ -42,7 +42,7 @@ function Item({item}){
         console.log('ID',detalleProducto.id)
         let coincidencia = cart.find( item => item.id === detalleProducto.id)
         console.log(coincidencia)
-        if(coincidencia != undefined){
+        if(coincidencia !== undefined){
           //checkItem(true);
           console.log('Hay coincidencia')
           return true;
@@ -53,7 +53,7 @@ function Item({item}){
 
     return(
         <div className='item'>
-            <Link to={'/productos/' + item.id}><a><img src={item.img} alt="item-imagen" /></a></Link>
+            <Link to={'/productos/' + item.id}><img src={item.img} alt="item-imagen" /></Link>
             <h3 className='item-title'>{item.titulo}</h3>
             <h5>{item.sub}</h5>
             <h3>${item.precio}</h3>

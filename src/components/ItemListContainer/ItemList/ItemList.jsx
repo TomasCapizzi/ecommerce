@@ -18,8 +18,7 @@ function ItemList(){
 
     useEffect(()=>{
     obtenerLista();
-    console.log(itemListState);
-    },[]);
+    },[itemListState]);
 
  
 

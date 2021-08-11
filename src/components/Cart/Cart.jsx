@@ -1,4 +1,4 @@
-import React, {useState,useEffect, useContext} from "react";
+import React, {useContext} from "react";
 import { CartContext } from "../../Store/CartContext";
 import CartItem from "./CartItem";
 import {Link} from 'react-router-dom';
@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 export default function Cart(){
     
-    const {cart} = useContext(CartContext);
+    const {cart, clearCart} = useContext(CartContext);
     const Costo = cart.map(item => item.precio * item.cantidad);
     let totalCosto = 0;
     for(let i=0; i<Costo.length;i++){
@@ -28,8 +28,13 @@ export default function Cart(){
                         {cart.map(item => <CartItem item={item} key={item.id}/> )}                        
                     </div>
                     <h3 className='cart-total'>Total: ${CostoTotal} </h3>
-                    <button>Pagar</button>
-                </div> : 
+                    <div className='btn-container'>
+
+                        <Link to='/fin-compra'><button>Pagar</button></Link>
+                        <button className='clear-cart' onClick={clearCart}>Borrar Carrito</button>
+                    </div>
+
+                </div> :
                 <div className='cart-vacio'>
                     <h2>Tu carrito esta vacio</h2>
                     <Link to='/'><button>Volver</button></Link>

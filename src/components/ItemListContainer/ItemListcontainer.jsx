@@ -1,5 +1,4 @@
-import React, {useContext} from 'react';
-import { CartContext } from '../../Store/CartContext';
+import React from 'react';
 import ItemList from './ItemList/ItemList';
 
 function ItemListContainer(props){

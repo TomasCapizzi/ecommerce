@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {categorias} from '../../../categorias';
 import {Link} from 'react-router-dom';
 
 function CategoryNav(){
-    const [categoriasListado, setCategoriasKistado] = useState(categorias);
+    const [categoriasListado, setCategoriasListado] = useState([]);
+    useEffect(()=>{
+        setCategoriasListado(categorias)
+    },[])
+
 
     return (
         <div className='categories-nav'>

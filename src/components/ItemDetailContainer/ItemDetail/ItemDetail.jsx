@@ -1,4 +1,4 @@
-import React,{useContext,useState, useEffect} from 'react';
+import React,{useContext,useState} from 'react';
 import ItemCount from "../../ItemCount/ItemCount";
 import {IoBeerOutline} from 'react-icons/io5';
 import {CartContext} from '../../../Store/CartContext';
@@ -10,7 +10,7 @@ const ItemDetail = ({item, indice}) => {
    const [contador, setContador] = useState(1);
    const [disableBtn, setDisableBtn] = useState(false);
    const [finCompra, setFinCompra] = useState(false);   
-   const {onAdd,cart, removeItem, checkItem} = useContext(CartContext);
+   const {onAdd,cart, removeItem} = useContext(CartContext);
 
    const {id, marca, estilo, precio, img} = item[indice];
    const detalleProducto = {
@@ -45,7 +45,7 @@ const ItemDetail = ({item, indice}) => {
     console.log('ID',detalleProducto.id)
     let coincidencia = cart.find( item => item.id === detalleProducto.id)
     console.log(coincidencia)
-    if(coincidencia != undefined){
+    if(coincidencia !== undefined){
       //checkItem(true);
       console.log('Hay coincidencia')
       return true;

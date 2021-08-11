@@ -46,9 +46,11 @@ useEffect(()=>{
          </Route>
          <Route path='/productos/:id'>
            <ItemDetailList />
+           <Footer/>
          </Route>
          <Route path='/categoria/:id'>
             <ItemCategory productos={productos}/>
+            <Footer/>
          </Route>
          <Route path='/contacto'>
            <Contacto/>
@@ -58,6 +60,7 @@ useEffect(()=>{
          </Route>
         <Route path='/cart'>
           <Cart/>
+          <Footer/>
         </Route>
        </Switch>
       </div>

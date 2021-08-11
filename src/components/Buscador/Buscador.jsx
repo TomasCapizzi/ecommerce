@@ -1,4 +1,4 @@
-import react from 'react'
+//import react from 'react'
 import {BsSearch} from 'react-icons/bs';
 
 export default function Buscador(){
