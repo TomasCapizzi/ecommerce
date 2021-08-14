@@ -14,3 +14,24 @@ body{
     width: 100%;
     margin: 0;
 }
+
+.home-container{
+    background-color: #335c67;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img{
+        width: 85%;
+        height: 450px;
+        border-radius: 12px;
+        margin-top: 30px;
+    }
+}
+
+.productos-container{
+    background-color: #335c67;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

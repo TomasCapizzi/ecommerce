@@ -10,12 +10,15 @@
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
+
+    img{
+        width:80%;
+        height: 150px;
+        margin-top: 8px;
+        margin-bottom: 5px;
+    }
 }
-.item img{
-    width:80%;
-    margin-top: 8px;
-    margin-bottom: 5px;
-}
+
 
 .item h3{
     width: 100%;

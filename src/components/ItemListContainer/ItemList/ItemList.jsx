@@ -18,7 +18,7 @@ function ItemList(){
 
     useEffect(()=>{
     obtenerLista();
-    },[itemListState]);
+    },[]);
 
  
 

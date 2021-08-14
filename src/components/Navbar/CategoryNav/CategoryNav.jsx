@@ -12,7 +12,7 @@ function CategoryNav(){
     return (
         <div className='categories-nav'>
             <ul>
-               {categoriasListado.map(cat => <Link to={`/categoria/${cat.id}`} style={{ textDecoration: 'none' }}><li key={cat.id}>{cat.nombre}</li></Link>)}
+               {categoriasListado.map(cat => <Link to={`/categoria/${cat.id}`} key={cat.id} style={{ textDecoration: 'none' }}><li>{cat.nombre}</li></Link>)}
             </ul>
         </div>
     )

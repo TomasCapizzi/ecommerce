@@ -5,7 +5,6 @@ import { CartContext } from '../../Store/CartContext';
 export default function CartItem({item}){
     
     const {removeItem} = useContext(CartContext);
-    console.log(item)
     function deleteItem(){
         removeItem(item);
     }

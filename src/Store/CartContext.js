@@ -16,10 +16,14 @@ export function CartContextProvider({children}){
         setCart(itemRemovido)
     }
 
+    const costoTotal = cart.reduce((acc,{cantidad,precio}) => {
+        return acc = acc + (precio*cantidad);
+    },0);
+
     const clearCart = ()=> setCart([]);
 
     return(
-        <CartContext.Provider value={{cart, onAdd, removeItem, clearCart }}>
+        <CartContext.Provider value={{cart, onAdd, removeItem, clearCart, costoTotal }}>
             {children}
         </CartContext.Provider>
     )

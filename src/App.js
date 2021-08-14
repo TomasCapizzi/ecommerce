@@ -4,14 +4,15 @@ import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from './components/ItemListContainer/ItemListcontainer';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import ItemDetailList from './components/ItemDetailContainer/ItemDetailList/ItemDetailList';
+import ItemList from './components/ItemListContainer/ItemList/ItemList';
 import Contacto from './components/Contacto/Contacto';
-import Productos from './components/Productos/Productos';
 import CategoryNav from './components/Navbar/CategoryNav/CategoryNav';
 import ItemCategory from './components/ItemListContainer/ItemList/ItemCategory/ItemCategory';
 import { CartContextProvider } from './Store/CartContext';
 import Cart from './components/Cart/Cart';
 import {database} from './Firebase/productos';
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
+import Pagar from './components/Pagar/Pagar';
 
 
 
@@ -33,7 +34,6 @@ useEffect(()=>{
   return (
    <CartContextProvider>
     <BrowserRouter>
-
      <div className="App">
        <div className='nav-container'>
         <Navbar nombreTienda='Craft-Beer'/>
@@ -41,30 +41,34 @@ useEffect(()=>{
        </div>
        <Switch>
          <Route exact path='/'>
-          <ItemListContainer greetings="¡Bienvenido a nuestra Tienda Online!"/>
-          <Footer/>
+            <div className='home-container'>
+             <img src='https://images.pexels.com/photos/1561145/pexels-photo-1561145.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='Portada'></img>
+             <ItemListContainer greetings="¡Bienvenido a nuestra Tienda Online!"/>
+            </div>
          </Route>
          <Route path='/productos/:id'>
            <ItemDetailList />
-           <Footer/>
          </Route>
          <Route path='/categoria/:id'>
             <ItemCategory productos={productos}/>
-            <Footer/>
          </Route>
          <Route path='/contacto'>
            <Contacto/>
          </Route>
          <Route path='/productos'>
-           <Productos/>
+           <div className='productos-container'>
+             <ItemList/>
+           </div>
          </Route>
         <Route path='/cart'>
           <Cart/>
-          <Footer/>
+        </Route>
+        <Route path='/fin-compra'>
+          <Pagar/>
         </Route>
        </Switch>
+       <Footer/>
       </div>
-
     </BrowserRouter>
   </CartContextProvider>
   );

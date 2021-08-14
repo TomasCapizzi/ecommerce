@@ -1,0 +1,56 @@
+.fin-compra{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #335C67;
+    color: #FFE681;
+
+    form{
+        display: flex;
+        width: 30%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    .form-datos-personales{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    button{
+        width: 120px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        padding: 5px 0;
+        background-color: #E09F3E;
+        color: #335C67;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+    }
+
+    button:hover{
+        box-shadow: 0 5px 7px rgba(0,0,0,0.4);
+    }
+
+    h4{
+        color: #E09F3E;
+        font-size: 1.28rem;
+    }
+
+    input{
+        padding: 5px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    select{
+        padding: 5px;
+        border-radius: 8px;
+        color: #335C67;
+        font-weight: bold;
+    }
+}

@@ -39,11 +39,8 @@ function Item({item}){
       }
     
       const verificarItem = (detalleProducto)=> {
-        console.log('ID',detalleProducto.id)
         let coincidencia = cart.find( item => item.id === detalleProducto.id)
-        console.log(coincidencia)
         if(coincidencia !== undefined){
-          //checkItem(true);
           console.log('Hay coincidencia')
           return true;
         } else{

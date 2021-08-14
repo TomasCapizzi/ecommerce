@@ -5,7 +5,6 @@ import Spinner from "../../Spinner/Spinner";
 import {database} from '../../../Firebase/productos.js'
 
 export default function ItemDetailList(){
-
     const { id: idParams }  = useParams();
     const [itemDetailState, setItemDetailState] = useState([]);
     const [load, setLoad] = useState(false);
@@ -19,7 +18,7 @@ export default function ItemDetailList(){
 
 
     useEffect(()=>{
-        obtenerLista();   
+        return obtenerLista();   
     },[]);
 
 return(    
