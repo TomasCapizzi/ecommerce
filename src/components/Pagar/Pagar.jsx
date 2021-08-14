@@ -76,6 +76,7 @@ export default function Pagar(){
                     <option value="Buenos Aires">Bs As</option>
                     <option value="Capital">Capital</option>
                     <option value="Santa Fe">Santa Fe</option>
+                    <option value="Entre Ríos">Entre Ríos</option>
                 </select>
             </div>
             <Link to='/'><button onClick={getFormData}>Pagar</button></Link>
