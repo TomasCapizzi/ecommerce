@@ -9,9 +9,10 @@ function ItemList(){
 
     const obtenerLista = ()=> {
         const listaProductos = database.collection('productos');
+            
         listaProductos.get().then((query) => setItemListState(query.docs.map((doc) => {
             setLoad(true);
-            return {...doc.data()}         
+            return {...doc.data(), producto: doc.id}         
         })))       
     }
 

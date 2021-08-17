@@ -5,6 +5,7 @@ import {CartContext} from '../../../Store/CartContext';
 import{Link} from 'react-router-dom';
 
 const ItemDetail = ({item, indice}) => {
+
   item.sort((a,b)=> {return a.id-b.id});
   
    const [contador, setContador] = useState(1);
@@ -12,13 +13,16 @@ const ItemDetail = ({item, indice}) => {
    const [finCompra, setFinCompra] = useState(false);   
    const {onAdd,cart, removeItem} = useContext(CartContext);
 
-   const {id, marca, estilo, precio, img} = item[indice];
+   const {id, marca, estilo, precio, img, producto, stock} = item[indice];
+   console.log(producto)
    const detalleProducto = {
      id: id,
      estilo: estilo,
      marca: marca,
      precio: precio,
      img: img,
+     producto: producto,
+     stock: stock,
      cantidad: contador
    }
 
@@ -68,6 +72,7 @@ const ItemDetail = ({item, indice}) => {
                   <p><IoBeerOutline/></p>
                 </div>
                   <h3>${item[indice].precio}</h3>  
+                  <h4>Stock: {item[indice].stock}</h4>
                 { !finCompra ? (
                 <div id='counter-btnAdd' className='container-counter-btn'>
                   <div className='item-detail-count'>

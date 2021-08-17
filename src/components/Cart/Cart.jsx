@@ -7,10 +7,10 @@ import {Link} from 'react-router-dom';
 export default function Cart(){
     
     const {cart, clearCart, costoTotal} = useContext(CartContext);
-    const Costo = cart.map(item => item.precio * item.cantidad);
+    const costo = cart.map(item => item.precio * item.cantidad);
     let totalCosto = 0;
-    for(let i=0; i<Costo.length;i++){
-        totalCosto = Costo[i] + totalCosto
+    for(let i=0; i<costo.length;i++){
+        totalCosto = costo[i] + totalCosto
     }
 // Reduce
 /*

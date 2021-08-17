@@ -27,24 +27,31 @@ export default function Pagar(){
             fecha: new Date().toString(),
             total: costoTotal
         }
-        const coleccionProductos =  database.collection('productos');
         const coleccionOrdenes =  database.collection('compras');
+       modificarStock();
 
         coleccionOrdenes.add(nuevaCompra).then((res) => {
             ordenID = res.id
-            cart.map((item) => {
-                const decremento = -(item.cantidad);
-                const stockItem = coleccionProductos.doc(item.id);
-                stockItem.update({
-                    stock: firebase.firestore.FieldValue.increment(decremento)
-                });
-            })
+            modificarStock();
             console.log(ordenID);
         }).catch((error)=>{
             alert('Error: ' + error);
         })
         console.log( 'Esta orden se va a agregar a la colección',nuevaCompra)
         clearCart();        
+    }
+
+    async function modificarStock(){
+        const coleccionProductos = await database.collection('productos');
+        cart.map((item) => {
+            const decremento = item.cantidad;
+            const stockItem = coleccionProductos.doc(item.producto);
+            const stockAnterior = item.stock;
+            console.log(stockAnterior, decremento)
+            stockItem.update({
+                stock: stockAnterior - decremento
+            });
+        })
     }
 
 

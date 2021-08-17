@@ -12,7 +12,7 @@ export default function ItemDetailList(){
     async function obtenerLista(){
         const listaProductos = await database.collection('productos');
         const listado = await listaProductos.get();
-        setItemDetailState(listado.docs.map((doc) => {return {...doc.data()}}));
+        setItemDetailState(listado.docs.map((doc) => {return {...doc.data(), producto: doc.id}}));
         setLoad(true)
     }
 

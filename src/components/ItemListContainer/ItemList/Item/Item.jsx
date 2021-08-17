@@ -9,13 +9,15 @@ function Item({item}){
     const [finCompra, setFinCompra] = useState(false);
     const {onAdd,cart, removeItem} = useContext(CartContext); 
 
-    const {id, estilo, marca, precio, img} = item;
+    const {id, estilo, marca, precio, img, stock, producto} = item;
     const detalleProducto = {
      id: id,
      estilo: estilo,
      marca: marca,
      precio: precio,
      img: img,
+     stock: stock,
+     producto: producto,
      cantidad: contador
     }
 
