@@ -12,7 +12,7 @@ export default function Cart(){
     for(let i=0; i<costo.length;i++){
         totalCosto = costo[i] + totalCosto
     }
-// Reduce
+// Otra mandera de hacerlo utilizando Reduce
 /*
     const CostoTotal = cart.reduce((acc,{cantidad,precio}) => {
         return acc = acc + (precio*cantidad);

@@ -10,6 +10,7 @@ const firebaseConfig = {
     messagingSenderId: "601427856399",
     appId: "1:601427856399:web:5bd2d9494ce97723c6a77a"
     */
+
    // BBDD de prueba
    
     apiKey: "AIzaSyCUzVEHopmAP3ULwhrd4SPhEUuR0p9Jc6c",

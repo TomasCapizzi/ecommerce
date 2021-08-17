@@ -14,7 +14,6 @@ const ItemDetail = ({item, indice}) => {
    const {onAdd,cart, removeItem} = useContext(CartContext);
 
    const {id, marca, estilo, precio, img, producto, stock} = item[indice];
-   console.log(producto)
    const detalleProducto = {
      id: id,
      estilo: estilo,
@@ -46,9 +45,7 @@ const ItemDetail = ({item, indice}) => {
   }
 
   const verificarItem = (detalleProducto)=> {
-    console.log('ID',detalleProducto.id)
     let coincidencia = cart.find( item => item.id === detalleProducto.id)
-    console.log(coincidencia)
     if(coincidencia !== undefined){
       //checkItem(true);
       console.log('Hay coincidencia')

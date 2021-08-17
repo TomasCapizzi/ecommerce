@@ -5,9 +5,6 @@ import Spinner from "../../../Spinner/Spinner";
 import {database} from '../../../../Firebase/productos';
 
 export default function ItemCategory({productos}){
-   
-    console.log(productos);
-
     const {id: idParams} = useParams()
     const [categoria, setCategoria] = useState([]);
     const [load, setLoad] = useState(false);
@@ -29,10 +26,7 @@ export default function ItemCategory({productos}){
             item.categoria === parseInt(idParams));
         setCategoria(items);   
         setLoad(true);   
-    } 
-
-
-
+    }
 
     return (
         <div className="contenedor-items-categoria">

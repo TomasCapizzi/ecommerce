@@ -1,8 +1,7 @@
-import React,{useState, useEffect, useContext} from 'react';
+import React,{useEffect, useContext} from 'react';
 import { database } from '../../Firebase/productos';
 import { CartContext } from '../../Store/CartContext';
 import {Link} from 'react-router-dom';
-import firebase from 'firebase/app';
 
 export default function Pagar(){
 
@@ -33,11 +32,10 @@ export default function Pagar(){
         coleccionOrdenes.add(nuevaCompra).then((res) => {
             ordenID = res.id
             modificarStock();
-            console.log(ordenID);
         }).catch((error)=>{
             alert('Error: ' + error);
         })
-        console.log( 'Esta orden se va a agregar a la colección',nuevaCompra)
+        //console.log( 'Esta orden se va a agregar a la colección',nuevaCompra)
         clearCart();        
     }
 
