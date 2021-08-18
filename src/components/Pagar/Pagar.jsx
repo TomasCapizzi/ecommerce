@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 export default function Pagar(){
 
     const {cart, costoTotal, clearCart} = useContext(CartContext)
-
+// eslint-disable-next-line
     let ordenID;
 
     function getFormData(e){
@@ -46,7 +46,7 @@ export default function Pagar(){
             const stockItem = coleccionProductos.doc(item.producto);
             const stockAnterior = item.stock;
             console.log(stockAnterior, decremento)
-            stockItem.update({
+            return stockItem.update({
                 stock: stockAnterior - decremento
             });
         })
