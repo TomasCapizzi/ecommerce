@@ -1,16 +1,15 @@
-import React,{useEffect, useContext} from 'react';
+import React,{useContext} from 'react';
 import { database } from '../../Firebase/productos';
 import { CartContext } from '../../Store/CartContext';
 import {Link} from 'react-router-dom';
 
 export default function Pagar(){
-
     const {cart, costoTotal, clearCart} = useContext(CartContext)
 // eslint-disable-next-line
     let ordenID;
 
     function getFormData(e){
-        e.preventDefault()
+        e.preventDefault();
         const datosComprador = {
             email: document.getElementById('email').value,
             nombre: document.getElementById('nombre').value,
@@ -20,23 +19,29 @@ export default function Pagar(){
             localidad: document.getElementById('localidad').value,
             provincia: document.getElementById('provincia').value
         }
-        const nuevaCompra = {
-            datos: datosComprador,
-            carta: cart,
-            fecha: new Date().toString(),
-            total: costoTotal
-        }
-        const coleccionOrdenes =  database.collection('compras');
-       modificarStock();
 
-        coleccionOrdenes.add(nuevaCompra).then((res) => {
-            ordenID = res.id
-            modificarStock();
-        }).catch((error)=>{
-            alert('Error: ' + error);
-        })
-        //console.log( 'Esta orden se va a agregar a la colección',nuevaCompra)
-        clearCart();        
+        if(validarForm(datosComprador)){
+            const nuevaCompra = {
+                datos: datosComprador,
+                carta: cart,
+                fecha: new Date().toString(),
+                total: costoTotal
+            }
+            const coleccionOrdenes =  database.collection('compras');
+           modificarStock();
+    
+            coleccionOrdenes.add(nuevaCompra).then((res) => {
+                ordenID = res.id
+                modificarStock();
+            }).catch((error)=>{
+                alert('Error: ' + error);
+            })
+            clearCart();
+        
+        } else{
+            alert('Faltan campos por completar')
+        }
+        
     }
 
     async function modificarStock(){
@@ -45,22 +50,27 @@ export default function Pagar(){
             const decremento = item.cantidad;
             const stockItem = coleccionProductos.doc(item.producto);
             const stockAnterior = item.stock;
-            console.log(stockAnterior, decremento)
             return stockItem.update({
                 stock: stockAnterior - decremento
             });
         })
     }
 
+    function validarForm(datos){
+        const {email, nombre, apellido, dni, direccion, localidad, provincia} = datos
 
+        if(email === '' || nombre === '' || apellido === '' || dni === '' || direccion === '' || localidad === '' || provincia === ''){
+            return false;
+        } else{
+            return true;
+        }
+    }
 
-    useEffect(()=>{
-    },[])
 
     return (
     <div className='fin-compra'>
         {cart.length ?
-        <form action="">
+        <form action="" id='form'>
             <h4>Dirección de envío</h4>
             <label>Correo Electrónico</label>
             <input type="text"  id='email'/>

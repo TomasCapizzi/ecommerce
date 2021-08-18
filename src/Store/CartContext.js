@@ -13,7 +13,6 @@ export function CartContextProvider({children}){
 
     const removeItem = (detalleProducto)=>{
         let itemRemovido = cart.filter(item => item.id !== detalleProducto.id);
-        console.log(itemRemovido)
         setCart(itemRemovido)
     }
 
