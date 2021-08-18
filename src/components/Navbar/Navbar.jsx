@@ -1,8 +1,7 @@
 import React from 'react';
-import Carrito from '../../components/Carrito/Carrito';
+import CarritoWidget from '../CarritoWidget/CarritoWidget';
 import {IoBeerOutline} from 'react-icons/io5';
 import Links from './Links/Links';
-//import {Link} from 'react-router-dom';
 import Buscador from '../Buscador/Buscador';
 
 function Navbar(props){
@@ -14,7 +13,7 @@ function Navbar(props){
             </div>
         <div>
             <Links />
-            <Carrito/> 
+            <CarritoWidget/> 
         </div>
         </nav>
     );
