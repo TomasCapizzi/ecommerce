@@ -13,6 +13,7 @@ import Cart from './components/Cart/Cart';
 import {database} from './Firebase/productos';
 import Footer from './components/Footer/Footer';
 import Pagar from './components/Pagar/Pagar';
+import ResultadoBusqueda from './components/Buscador/Resultado/ResultadoBusqueda';
 
 
 
@@ -59,6 +60,9 @@ useEffect(()=>{
            <div className='productos-container'>
              <ItemList/>
            </div>
+         </Route>
+         <Route path='/busqueda'>
+           <ResultadoBusqueda productos={productos}/>
          </Route>
         <Route path='/cart'>
           <Cart/>
