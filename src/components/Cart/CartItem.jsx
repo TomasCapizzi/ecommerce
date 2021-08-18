@@ -10,10 +10,14 @@ export default function CartItem({item}){
     }
     return <div className='cart-item'>
         <img src={item.img} alt="" />
-        <h3>{item.marca}</h3>
-        <h3>{item.estilo}</h3>
-        <h5>{item.cantidad}</h5>
-        <h5>${item.precio}</h5>
+        <div>
+         <h3>{item.marca}</h3>
+         <h3>{item.estilo}</h3>
+        </div>
+        <div>
+            <h5>{item.cantidad}</h5>
+            <h5>${item.precio}</h5>
+        </div>
         <h5>Total: ${(item.precio)*(item.cantidad)} </h5>
         <button onClick={deleteItem}><i><RiDeleteBin6Fill/></i></button>
 

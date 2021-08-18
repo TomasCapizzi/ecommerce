@@ -1,31 +1,53 @@
 .cart-item{
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-around;
     border-bottom: 1px solid #E09F3E;
     align-items: center;
+    justify-content: space-evenly;
 
     img{
-        width: 120px;
-        height: 150px;
+        width: 95px;
+        height: 105px;
     }
 
     button{
         background-color: transparent;
         color: #E09F3E;
         font-size: 1.2rem;
-        align-items: center;
         border: none;
-        box-shadow: 0 0 0 ;
         cursor: pointer;
         width: 40px;
     }
+
     button:hover{
         color: #9E2A2B;
     }
 
-    h3, h5{
-        font-size: 1.2rem;
+    h3{
+        font-size: 1rem;
     }
+    h5{
+        font-size:0.8rem;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+
+    .cart-item{
+        img{
+            width: 130px;
+            height: 115px;
+        }
+    
+        button{
+            font-size: 1.4rem;
+        }    
+        h3{
+            font-size: 1.3rem;
+        }
+        h5{
+            font-size:1.2rem;
+        }
+    }
+    
 }

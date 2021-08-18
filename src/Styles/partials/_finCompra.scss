@@ -9,7 +9,7 @@
 
     form{
         display: flex;
-        width: 30%;
+        width: 40%;
         flex-direction: column;
         justify-content: center;
     }
@@ -53,4 +53,117 @@
         color: #335C67;
         font-weight: bold;
     }
+}
+
+@media only screen and (max-width: 600px){
+
+    .fin-compra{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        background-color: #335C67;
+        color: #FFE681;    
+        form{
+            display: flex;
+            width: 70%;
+            flex-direction: column;
+            justify-content: center;
+        }    
+        .form-datos-personales{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }    
+        button{
+            width: 100px;
+            font-size: 1rem;
+            border-radius: 8px;
+            padding: 5px 0;
+            background-color: #E09F3E;
+            color: #335C67;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+        }
+        h4{
+            color: #E09F3E;
+            font-size: 1.1rem;
+            margin:10px;
+            text-align: center;
+        }
+        input{
+            padding: 5px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+        select{
+            padding: 5px;
+            border-radius: 8px;
+            color: #335C67;
+            font-weight: bold;
+        }
+    }
+
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px){
+
+    .fin-compra{
+        form{
+            display: flex;
+            width: 70%;
+            flex-direction: column;
+            justify-content: center;
+        }      
+        button{
+            width: 120px;
+            font-size: 1rem;
+            border-radius: 8px;
+            padding: 5px 0;
+            background-color: #E09F3E;
+            color: #335C67;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+        }
+        h4{
+            font-size: 1.5rem;
+            margin:10px;
+            text-align: center;
+        }
+        select{
+            padding: 5px;
+            border-radius: 8px;
+            color: #335C67;
+            font-weight: bold;
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1400px){
+
+    .fin-compra{
+        form{
+            display: flex;
+            width: 65%;
+            flex-direction: column;
+            justify-content: center;
+        }      
+        button{
+            width: 120px;
+            font-size: 1rem;
+            border-radius: 8px;
+            padding: 5px 0;
+            background-color: #E09F3E;
+            color: #335C67;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+        }
+        h4{
+            font-size: 1.6rem;
+            margin:10px;
+            text-align: center;
+        }
+    }
+
 }

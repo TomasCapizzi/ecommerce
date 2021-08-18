@@ -87,3 +87,99 @@
         cursor: pointer;
     }
 }
+
+@media only screen and (max-width: 800px){
+
+    .cart-container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        background-color: #335C67;
+        color: #FFF3B0;
+        min-height: 100vh;
+    }
+    .cart-full{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-bottom: 200px;
+    
+        h2{
+            width: 100%;
+            font-size: 1.2rem;
+        }
+        .cart-total{
+            width: 100%;
+            font-size: 1.3rem;
+        }
+        .btn-container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            button{
+                background-color: #E09F3E;
+                color: #335C67;
+                padding: 6px;
+                font-size: 1rem;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                height: 50px;
+                width: 100px;
+            }
+    
+            .clear-cart{
+                background-color: #9E2A2B;
+                color: #FFF3B0;
+            }
+    
+            button:hover{
+                box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+            }
+        }
+    
+        
+    }
+    
+    .cart-item-container{
+        display: flex;
+        width: 95%;
+        padding: 2px;
+        flex-wrap: wrap;
+        border: 2px solid #E09F3E;
+        border-radius: 5px;
+    }
+    
+    .cart-vacio{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        height: 10%;
+    
+        h2{
+            width: 100%;
+        }
+        a{
+            width: 100%;
+        }
+        button{
+            width: 120px;
+            padding: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #E09F3E;
+            color: #335C67;
+            border-radius: 8px;
+            height: 50px;
+            cursor: pointer;
+        }
+    }
+
+}

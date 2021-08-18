@@ -5,3 +5,22 @@
     justify-content: flex-start;
     margin: 15px;
 }
+
+@media only screen and (max-width: 600px){
+    .item-list{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 10px;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 1424px){
+    .item-list{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px;
+    }
+}

@@ -11,10 +11,10 @@ function Navbar(props){
                 <h1>{props.nombreTienda} <IoBeerOutline /></h1>
                 <Buscador/>
             </div>
-        <div>
-            <Links />
-            <CarritoWidget/> 
-        </div>
+            <div className='nav-links'>
+              <Links />
+               <CarritoWidget/> 
+            </div>
         </nav>
     );
 }

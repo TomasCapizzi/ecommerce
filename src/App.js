@@ -71,6 +71,7 @@ useEffect(()=>{
           <Pagar/>
         </Route>
        </Switch>
+       
        <Footer/>
       </div>
     </BrowserRouter>
