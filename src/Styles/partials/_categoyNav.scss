@@ -21,3 +21,18 @@
 .categories-nav ul li:hover{
     color: #9e2a2b;
 }
+
+@media only screen and (max-width: 500px){
+    .categories-nav{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #e09f3e;
+        ul{
+            width: 90%;
+            font-size: 0.9rem;
+        }
+    }
+    
+
+}
