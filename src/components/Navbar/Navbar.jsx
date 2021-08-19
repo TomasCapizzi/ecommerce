@@ -3,9 +3,20 @@ import CarritoWidget from '../CarritoWidget/CarritoWidget';
 import {IoBeerOutline} from 'react-icons/io5';
 import Links from './Links/Links';
 import Buscador from '../Buscador/Buscador';
+import { TiThMenu } from "react-icons/ti";
 
 function Navbar(props){
+    const menu = document.getElementById('menuHamb');
+
+
+    function mostrarMenu(){
+        menu.classList.toggle('on');
+    }
+
+
+
     return (
+        <>
         <nav className="navbar">
             <div className='navbar-logo-item'>
                 <h1>{props.nombreTienda} <IoBeerOutline /></h1>
@@ -16,6 +27,17 @@ function Navbar(props){
                <CarritoWidget/> 
             </div>
         </nav>
+        <div className='menu-hamb'>
+                <h1>{props.nombreTienda} <IoBeerOutline /></h1>
+                <div className='hamb-icons'>
+                 <CarritoWidget/> 
+                 <button onClick={mostrarMenu}><TiThMenu/></button>
+                </div>
+                <div className='hamb-hide' id='menuHamb'>
+                  <Links />
+                </div>
+            </div>
+        </>
     );
 }
 export default Navbar;
