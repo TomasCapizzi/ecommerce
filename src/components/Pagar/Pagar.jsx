@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React,{useState,useContext} from 'react';
 import { database } from '../../Firebase/productos';
 import { CartContext } from '../../Store/CartContext';
 import {Link} from 'react-router-dom';
@@ -7,7 +7,7 @@ export default function Pagar(){
     const {cart, costoTotal, clearCart} = useContext(CartContext)
 // eslint-disable-next-line
     let ordenID;
-
+    const [orden, setOrden] = useState('')
     function getFormData(e){
         e.preventDefault();
         const datosComprador = {
@@ -32,6 +32,7 @@ export default function Pagar(){
     
             coleccionOrdenes.add(nuevaCompra).then((res) => {
                 ordenID = res.id
+                setOrden(ordenID)
                 modificarStock();
             }).catch((error)=>{
                 alert('Error: ' + error);
@@ -66,7 +67,6 @@ export default function Pagar(){
         }
     }
 
-
     return (
     <div className='fin-compra'>
         {cart.length ?
@@ -99,6 +99,7 @@ export default function Pagar(){
         : <div>
             <h3>¡Pago realizado con éxito!</h3>
          <Link to='/'><button>Volver</button></Link>    
+         <p>{'Se generó correctamente tu orden:  ' + orden}</p>
         </div>}
     </div>)
 }

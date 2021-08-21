@@ -12,7 +12,7 @@ function Navbar(props){
 
     function mostrarMenu(){
         menu.classList.toggle('on');
-    }
+    } 
 
     return (
         <>

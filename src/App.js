@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 import './Styles/main.scss';
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from './components/ItemListContainer/ItemListcontainer';
@@ -10,7 +10,6 @@ import CategoryNav from './components/Navbar/CategoryNav/CategoryNav';
 import ItemCategory from './components/ItemListContainer/ItemList/ItemCategory/ItemCategory';
 import { CartContextProvider } from './Store/CartContext';
 import Cart from './components/Cart/Cart';
-import {database} from './Firebase/productos';
 import Footer from './components/Footer/Footer';
 import Pagar from './components/Pagar/Pagar';
 import ResultadoBusqueda from './components/Buscador/Resultado/ResultadoBusqueda';
@@ -18,19 +17,6 @@ import ResultadoBusqueda from './components/Buscador/Resultado/ResultadoBusqueda
 
 
 function App() {
-
-  const [productos, setProductos] = useState([]);
-
-  async function obtenerProductos(){
-    const listaProductos = await database.collection('productos');
-    const listado = await listaProductos.get();
-    setProductos(listado.docs.map((doc) => {return {...doc.data()}}));
-}
-
-useEffect(()=>{
-  obtenerProductos();
-}, []);
-
 
   return (
    <CartContextProvider>
@@ -62,7 +48,7 @@ useEffect(()=>{
            </div>
          </Route>
          <Route path='/busqueda'>
-           <ResultadoBusqueda productos={productos}/>
+           <ResultadoBusqueda/>
          </Route>
         <Route path='/cart'>
           <Cart/>

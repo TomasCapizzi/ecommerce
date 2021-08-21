@@ -7,6 +7,7 @@ import{Link} from 'react-router-dom';
 const ItemDetail = ({item, indice}) => {
 
   item.sort((a,b)=> {return a.id-b.id});
+  console.log(item)
   
    const [contador, setContador] = useState(1);
    const [disableBtn, setDisableBtn] = useState(false);
