@@ -51,7 +51,7 @@ useEffect(()=>{
            <ItemDetailList />
          </Route>
          <Route path='/categoria/:id'>
-            <ItemCategory productos={productos}/>
+            <ItemCategory/>
          </Route>
          <Route path='/contacto'>
            <Contacto/>

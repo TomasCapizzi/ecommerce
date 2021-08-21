@@ -8,6 +8,10 @@
     color: #fff3b0;
     justify-content: center;
     text-align: center;
+    h3{
+        width: 100%;
+        font-size: 2rem;
+    }
 }
 
 .category-list{
@@ -67,6 +71,13 @@
         display: flex;
         justify-content: center;
         text-align: center;
+    }
+
+}
+
+@media only screen and (min-width: 1500px){
+    .contenedor-items-categoria{
+        padding-bottom: 150px;
     }
 
 }

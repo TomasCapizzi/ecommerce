@@ -4,13 +4,26 @@ import Item from "../Item/Item";
 import Spinner from "../../../Spinner/Spinner";
 import {database} from '../../../../Firebase/productos';
 
-export default function ItemCategory({productos}){
+export default function ItemCategory(){
     const {id: idParams} = useParams()
     const [categoria, setCategoria] = useState([]);
+    const [titulo, setTitulo] = useState('')
     const [load, setLoad] = useState(false);
+
+    function tituloCategoria(id){
+        if(id === '1'){
+        console.log('hola')
+         setTitulo('Clásicas')
+        } else if( id === '2'){
+           setTitulo('Lupuladas')
+        } else if(id === '3'){
+            setTitulo('Experimentales');
+        }
+    }
 
     useEffect(()=>{
         handlerCategoria();
+        tituloCategoria(idParams);
          // eslint-disable-next-line react-hooks/exhaustive-deps
     },[idParams]);
 
@@ -30,7 +43,8 @@ export default function ItemCategory({productos}){
 
     return (
         <div className="contenedor-items-categoria">
-            <div className='category-list'>
+            <h3>{titulo}</h3>
+            <div className='category-list'>                
                 { load ?
                 categoria.map(
                     item => (

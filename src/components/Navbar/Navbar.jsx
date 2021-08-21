@@ -4,6 +4,7 @@ import {IoBeerOutline} from 'react-icons/io5';
 import Links from './Links/Links';
 import Buscador from '../Buscador/Buscador';
 import { TiThMenu } from "react-icons/ti";
+import {Link} from 'react-router-dom'
 
 function Navbar(props){
     const menu = document.getElementById('menuHamb');
@@ -13,13 +14,11 @@ function Navbar(props){
         menu.classList.toggle('on');
     }
 
-
-
     return (
         <>
         <nav className="navbar">
             <div className='navbar-logo-item'>
-                <h1>{props.nombreTienda} <IoBeerOutline /></h1>
+                <Link to='/'><h1>{props.nombreTienda} <IoBeerOutline /></h1></Link>
                 <Buscador/>
             </div>
             <div className='nav-links'>

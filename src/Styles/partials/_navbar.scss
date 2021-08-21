@@ -17,6 +17,11 @@
 }
 .navbar-logo-item{
     display: flex;
+
+    a{
+        text-decoration: none;
+        color: #fff3b0;
+    }
 }
 .navbar-logo-item div{
     margin-left: 15px;

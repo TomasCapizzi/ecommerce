@@ -15,13 +15,9 @@ function ItemList(){
             return {...doc.data(), producto: doc.id}         
         })))       
     }
-
-
     useEffect(()=>{
     obtenerLista();
     },[]);
-
- 
 
 return(
  
