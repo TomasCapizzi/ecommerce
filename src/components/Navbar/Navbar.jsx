@@ -7,11 +7,16 @@ import { TiThMenu } from "react-icons/ti";
 import {Link} from 'react-router-dom'
 
 function Navbar(props){
-    const menu = document.getElementById('menuHamb');
+    
+    const menuWidth = window.screenY;
 
 
     function mostrarMenu(){
+        console.log(menuWidth)
+        const menu = document.getElementById('menuHamb');
         menu.classList.toggle('on');
+
+       
     } 
 
     return (
@@ -30,7 +35,7 @@ function Navbar(props){
                 <h1>{props.nombreTienda} <IoBeerOutline /></h1>
                 <div className='hamb-icons'>
                  <CarritoWidget/> 
-                 <button onClick={mostrarMenu}><TiThMenu/></button>
+                 <button><TiThMenu  onClick={mostrarMenu}/></button>
                 </div>
                 <div className='hamb-hide' id='menuHamb'>
                   <Links />
