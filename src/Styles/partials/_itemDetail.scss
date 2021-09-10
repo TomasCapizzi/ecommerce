@@ -162,8 +162,78 @@
 .off{
     display: none;
 }
+@media only screen and (max-width: 600px){
+    
+    .item-detail{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 90%;
+        height: 530px;
+        margin-top: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 1px 4px 18px rgba(0,0,0,0.7);
+        align-items: center;
+        h3{
+            font-size: 1.15rem;
+        }
+    }
+    .item-detail-description{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        color: #335c67;
+        margin: 0;
+    }
+    
+#btnAgregar{
+    width: 100%;
+}
+.item-detail-title{
+    width: 100%;
+}
 
-@media only screen and (max-width: 800px){
+.btn-fin-compra{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+
+    a, div{
+    width: 100%;
+    }
+
+    button{
+    padding: 8px;
+    margin: 5px;
+    width: 40%;
+    background-color: #E09F3E;
+    color: #335c67;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    }
+}
+
+.btn-fin-compra div button{
+    background-color: #335c67;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.btn-fin-compra a button{
+    width: 50%;
+}
+
+
+}
+
+@media only screen and (min-width: 600px)and (max-width: 800px){
 
     .item-detail{
         display: flex;
