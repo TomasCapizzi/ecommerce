@@ -1,13 +1,16 @@
-# Craft-Beer 
+# Craft-Beer Ecommerce
 ***
 Proyecto de Ecommerce para aprender **React**
 ***
-*Actualmente en estado de desarrollo.*
+### Tecnologías aplicadas: React, Sass, Firebase
 
-### Tecnologías aplicadas: Html5, Sass, JavaScript, React
+Para correr la aplicación, colocar esto en la terminal:
 
-#### npm-start:
-Para correr la aplicación, colocar esto en la terminal
-
+###### npm-start
 
 *Github: tomascapizzi.github.io*
+
+### Gif
+
+![Ecommerce](C:\Users\User\Documents\portfolio\public\gif\Ecommerce.gif)
+
