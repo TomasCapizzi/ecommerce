@@ -12,5 +12,5 @@ Para correr la aplicación, colocar esto en la terminal:
 
 ### Gif
 
-![Ecommerce](C:\Users\User\Documents\portfolio\public\gif\Ecommerce.gif)
+[Ecommerce](C:\Users\User\ecommerce\public\gif\Ecommerce.gif)
 
