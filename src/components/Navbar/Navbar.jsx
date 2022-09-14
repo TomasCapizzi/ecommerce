@@ -1,45 +1,27 @@
-import React from 'react';
-import CarritoWidget from '../CarritoWidget/CarritoWidget';
+import React, {useRef} from 'react';
+
 import {IoBeerOutline} from 'react-icons/io5';
-import Links from './Links/Links';
-import Buscador from '../Buscador/Buscador';
-import { TiThMenu } from "react-icons/ti";
-import {Link} from 'react-router-dom'
+import LeftSideNav from './LeftSide/LeftSideNav';
+import ResponsiveNav from './ResponsiveNav/ResponsiveNav';
+import RightSideNav from './RightSide/RightSideNav';
 
 function Navbar(props){
-    
-    const menuWidth = window.screenY;
-
+    const title = props.nombreTienda;
+    const menuRef = useRef();
 
     function mostrarMenu(){
-        console.log(menuWidth)
-        const menu = document.getElementById('menuHamb');
-        menu.classList.toggle('on');
-
-       
+        menuRef.classList.toggle('on');       
     } 
 
     return (
         <>
-        <nav className="navbar">
-            <div className='navbar-logo-item'>
-                <Link to='/'><h1>{props.nombreTienda} <IoBeerOutline /></h1></Link>
-                <Buscador/>
-            </div>
-            <div className='nav-links'>
-              <Links />
-               <CarritoWidget/> 
-            </div>
-        </nav>
-        <div className='menu-hamb'>
+            <nav className="navbar">
+                <LeftSideNav title={title} />
+                <RightSideNav/>
+            </nav>
+            <div className='menu-hamb'>
                 <h1>{props.nombreTienda} <IoBeerOutline /></h1>
-                <div className='hamb-icons'>
-                 <CarritoWidget/> 
-                 <button><TiThMenu  onClick={mostrarMenu}/></button>
-                </div>
-                <div className='hamb-hide' id='menuHamb'>
-                  <Links />
-                </div>
+                <ResponsiveNav mostrarMenu={mostrarMenu} menuRef={menuRef} />
             </div>
         </>
     );
