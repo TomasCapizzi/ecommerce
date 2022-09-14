@@ -1,38 +1,22 @@
-import React from 'react';
 import {BsPlusCircleFill} from 'react-icons/bs';
 import {FaMinusCircle} from 'react-icons/fa';
-
+import React from 'react';
+import useCounter from '../../hooks/useCounter';
 
 function ItemCount({contador,setContador,stock,disableBtn,setDisableBtn}){
-    
-    let stockMinimo = true;
-    let stockMaximo = false;
-  
 
-    contador>1? stockMinimo=false : stockMinimo=true;
-    contador === stock ? stockMaximo = true : stockMaximo=false;
+    const {sumarContador, restarContador} = useCounter({contador, stock, setContador});  
+
     if(stock === 0){
         setDisableBtn(true);
-        stockMaximo = true;
-    }
-    
-    const sumarContador =()=>{
-        if(contador < stock && stock>=1){
-            setContador(contador+1);
-        } 
-    }
-    const restarContador =()=>{
-        if(contador<= stock && contador>1){
-            setContador(contador-1);            
-        }
     }
 
     return(
         <div className='item-counter'>
             <div className='btn-SumaResta'>
-                <button className='botones-contador' disabled={stockMinimo} onClick={restarContador}><FaMinusCircle /></button>
+                <button className='botones-contador' disabled={contador<=1} onClick={restarContador}><FaMinusCircle /></button>
                     <p>{contador}</p>
-                <button  className='botones-contador' disabled={stockMaximo} onClick={sumarContador}><BsPlusCircleFill /></button>
+                <button  className='botones-contador' disabled={contador === stock} onClick={sumarContador}><BsPlusCircleFill /></button>
             </div>
             
         </div>
