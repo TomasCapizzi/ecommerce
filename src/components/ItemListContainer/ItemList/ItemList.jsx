@@ -1,32 +1,28 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
+
 import Item from './Item/Item';
 import Spinner from "../../Spinner/Spinner";
-import {database} from '../../../Firebase/productos.js'
+import useFetchDatabase from "../../../hooks/useFetchDatabase";
 
 function ItemList(){
     const [itemListState, setItemListState] = useState([]);
     const [load, setLoad] = useState(false);
+    const {obtenerListado} = useFetchDatabase({setItemListState, setLoad})
 
-    const obtenerLista = ()=> {
-        const listaProductos = database.collection('productos');
-            
-        listaProductos.get().then((query) => setItemListState(query.docs.map((doc) => {
-            setLoad(true);
-            return {...doc.data(), producto: doc.id}         
-        })))       
-    }
     useEffect(()=>{
-    obtenerLista();
+    obtenerListado();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
 return(
  
     <div className='item-list'>
-        {load ? itemListState.map(
+        {load ? 
+            itemListState.map(
                 item =>  (
-                <Item item={item} key={item.id}/>
+                    <Item item={item} key={item.id}/>
                 )
-          ):  <Spinner/> }           
+            ) : <Spinner/> }           
     </div>
  
 )
