@@ -1,20 +1,20 @@
-import React from 'react';
 import './Styles/main.scss';
-import Navbar from "./components/Navbar/Navbar";
-import ItemListContainer from './components/ItemListContainer/ItemListcontainer';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import ItemDetailList from './components/ItemDetailContainer/ItemDetailList/ItemDetailList';
-import ItemList from './components/ItemListContainer/ItemList/ItemList';
-import Contacto from './components/Contacto/Contacto';
-import CategoryNav from './components/Navbar/CategoryNav/CategoryNav';
-import ItemCategory from './components/ItemListContainer/ItemList/ItemCategory/ItemCategory';
+
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+import Cart from './views/Cart/Cart';
 import { CartContextProvider } from './Store/CartContext';
-import Cart from './components/Cart/Cart';
+import CategoryNav from './components/Navbar/CategoryNav/CategoryNav';
+import Contacto from './views/Contacto/Contacto';
 import Footer from './components/Footer/Footer';
-import Pagar from './components/Pagar/Pagar';
+import Home from './views/Home/Home';
+import ItemCategory from './views/ItemCategory/ItemCategory';
+import ItemDetailList from './views/ItemDetailList/ItemDetailList';
+import Navbar from "./components/Navbar/Navbar";
+import Pay from './views/CheckOut/Pay';
+import Products from './views/Products/Products';
+import React from 'react';
 import ResultadoBusqueda from './components/Buscador/Resultado/ResultadoBusqueda';
-
-
 
 function App() {
 
@@ -27,11 +27,8 @@ function App() {
         <CategoryNav/>
        </div>
        <Switch>
-         <Route exact path='/'>
-            <div className='home-container'>
-             <img src='https://images.pexels.com/photos/1561145/pexels-photo-1561145.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='Portada'></img>
-             <ItemListContainer greetings="¡Bienvenido a nuestra Tienda Online!"/>
-            </div>
+        <Route exact path='/'>
+          <Home/>
          </Route>
          <Route path='/productos/:id'>
            <ItemDetailList />
@@ -43,9 +40,7 @@ function App() {
            <Contacto/>
          </Route>
          <Route path='/productos'>
-           <div className='productos-container'>
-             <ItemList/>
-           </div>
+            <Products />
          </Route>
          <Route path='/busqueda'>
            <ResultadoBusqueda/>
@@ -54,7 +49,7 @@ function App() {
           <Cart/>
         </Route>
         <Route path='/fin-compra'>
-          <Pagar/>
+          <Pay/>
         </Route>
        </Switch>
        
