@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import {categorias} from '../../../categorias';
+import React, {useEffect, useState} from 'react';
+
 import {Link} from 'react-router-dom';
+import {categorias} from '../../../data/categorias';
 
 function CategoryNav(){
     const [categoriasListado, setCategoriasListado] = useState([]);
